@@ -1,0 +1,49 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    tools:context=".TestActivity" >
+
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/selected_item"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:gravity="center" />
+
+
+    <GridView
+        android:id="@+id/gridViewChips"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:numColumns="7"
+        android:horizontalSpacing="0dp"
+        android:verticalSpacing="0dp"
+        android:layout_marginTop="35dp" >
+    </GridView>
+
+    <GridView
+        android:id="@+id/gridViewBoard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:numColumns="7"
+        android:layout_marginTop="35dp" >
+    </GridView>
+
+    <ImageView
+        android:layout_width="94dp"
+        android:layout_height="94dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="114dp"
+        android:layout_marginStart="91dp"
+        android:src="@drawable/red" />
+
+</RelativeLayout>

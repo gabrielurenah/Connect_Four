@@ -1,0 +1,84 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorNameBar"
+    tools:context=".MyGameActivity" >
+
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/begin_math_message"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:gravity="center"
+        tools:ignore="RelativeOverlap" />
+
+    <GridView
+        android:id="@+id/gridViewChips"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:numColumns="7"
+        android:horizontalSpacing="0dp"
+        android:verticalSpacing="0dp"
+        android:layout_marginTop="35dp"
+        android:paddingTop="30dp">
+    </GridView>
+
+    <GridView
+        android:id="@+id/gridViewBoard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:numColumns="7"
+        android:layout_marginTop="35dp"
+        android:paddingTop="30dp">
+    </GridView>
+
+    <ImageView
+        android:id="@+id/red_chip"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_toStartOf="@+id/textView1"
+        android:layout_marginStart="5dp"
+        android:src="@drawable/red"
+        android:visibility="visible"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/yellow_chip"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="35dp"
+        android:src="@drawable/yellow"
+        android:visibility="visible"
+        tools:ignore="ContentDescription" />
+
+    <ImageButton
+        android:id="@+id/no_sound_btn"
+        android:layout_width="57dp"
+        android:layout_height="57dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:background="@drawable/no_sound"
+        tools:ignore="ContentDescription" />
+
+    <ImageButton
+        android:id="@+id/sound_btn"
+        android:visibility="invisible"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:background="@drawable/sound"
+        tools:ignore="ContentDescription" />
+
+</RelativeLayout>
