@@ -87,11 +87,7 @@ public class MyGameActivity extends AppCompatActivity {
                     //It's a Draw! Show Draw Dialog
                     alertDialogBox(-1);
                 }
-                if ( checkWin(board) != 0 ) {
-                    //Show Button Dialog Message
-                    mWinMusic.start();
-                    alertDialogBox(checkWin(board));
-                } else if (isFull(mColumn)) {
+                if (isFull(mColumn)) {
                     Toast.makeText(MyGameActivity.this,
                                    "this column is full",
                                     Toast.LENGTH_SHORT).show();
@@ -114,6 +110,12 @@ public class MyGameActivity extends AppCompatActivity {
             }
         });
 
+        if ( checkWin(board) != 0 ) {
+            //Show Button Dialog Message
+            mWinMusic.start();
+            alertDialogBox(checkWin(board));
+        }
+        
         Sound.setOnClickListener(view -> {
             Sound.setVisibility(View.INVISIBLE);
             nSound.setVisibility(View.VISIBLE);
