@@ -107,15 +107,15 @@ public class MyGameActivity extends AppCompatActivity {
                     chipImg.setVisibility(View.VISIBLE);
                     toggleTurn();
                 }
+                if ( checkWin(board) != 0 ) {
+                    //Show Button Dialog Message
+                    mWinMusic.start();
+                    alertDialogBox(checkWin(board));
+                }
             }
+
         });
 
-        if ( checkWin(board) != 0 ) {
-            //Show Button Dialog Message
-            mWinMusic.start();
-            alertDialogBox(checkWin(board));
-        }
-        
         Sound.setOnClickListener(view -> {
             Sound.setVisibility(View.INVISIBLE);
             nSound.setVisibility(View.VISIBLE);
