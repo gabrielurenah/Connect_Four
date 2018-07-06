@@ -47,7 +47,7 @@ public class ChipsAdapter extends BaseAdapter {
             img.setImageResource(R.drawable.red);
             img.setVisibility(View.INVISIBLE);
             img.setAdjustViewBounds(true);
-            img.setLayoutParams(new GridView.LayoutParams(pxWidth/6, pxHeight/11));
+            img.setLayoutParams(new GridView.LayoutParams(pxWidth/7, (int) (pxHeight/11.5)));
             views.add(img);
             return img;
         }
