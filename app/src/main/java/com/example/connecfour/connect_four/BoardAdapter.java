@@ -1,6 +1,7 @@
 package com.example.connecfour.connect_four;
 
 import android.content.Context;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -36,12 +37,16 @@ public class BoardAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         // TODO Auto-generated method stub
 
+        DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
+        int pxWidth = displayMetrics.widthPixels;
+        int pxHeight = displayMetrics.heightPixels;
+
         if(convertView == null) {
 
             ImageView img = new ImageView(this.context);
             img.setImageResource(R.drawable.board_blue_mini);
             img.setAdjustViewBounds(true);
-            img.setLayoutParams(new GridView.LayoutParams(80, 65));
+            img.setLayoutParams(new GridView.LayoutParams(pxWidth/7, (int) ((int)pxHeight/11.5)));
             views.add(img);
             return img;
         }

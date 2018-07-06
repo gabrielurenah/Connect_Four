@@ -65,7 +65,7 @@ public class MyGameActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 // TODO Auto-generated method stub
 
-                if (actualTurn() == 1) {
+                 if (actualTurn() == 1) {
                     nDisplayTurn.setText("P2 Moves");
                     mYellow.setVisibility(View.VISIBLE);
                     mRed.setVisibility(View.INVISIBLE);
@@ -92,7 +92,7 @@ public class MyGameActivity extends AppCompatActivity {
                                    "this column is full",
                                     Toast.LENGTH_SHORT).show();
                     /*Do Nothing*/
-                } else {
+                } else if (checkWin(board) == 0){
                     Animation animation = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.bounce_from_top);
                     ImageView chipImg = (ImageView) mChipsView.getItemAtPosition(boardPos(mColumn));
 
@@ -107,7 +107,7 @@ public class MyGameActivity extends AppCompatActivity {
                     chipImg.setVisibility(View.VISIBLE);
                     toggleTurn();
                 }
-                if ( checkWin(board) != 0 ) {
+                if (checkWin(board) != 0){
                     //Show Button Dialog Message
                     mWinMusic.start();
                     alertDialogBox(checkWin(board));

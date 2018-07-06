@@ -1,6 +1,8 @@
 package com.example.connecfour.connect_four;
 
 import android.content.Context;
+import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -36,12 +38,16 @@ public class ChipsAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
+        DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
+        int pxWidth = displayMetrics.widthPixels;
+        int pxHeight = displayMetrics.heightPixels;
+
         if (convertView == null) {
             ImageView img = new ImageView(this.context);
             img.setImageResource(R.drawable.red);
             img.setVisibility(View.INVISIBLE);
             img.setAdjustViewBounds(true);
-            img.setLayoutParams(new GridView.LayoutParams(80, 65));
+            img.setLayoutParams(new GridView.LayoutParams(pxWidth/6, pxHeight/11));
             views.add(img);
             return img;
         }
